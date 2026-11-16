@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Glasgow Gander Walking Tours</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Glasgow's 5-star, 3-hour city centre walking tour with Johnny, the self-styled Glasgow Gander. Victorian architecture, the Merchant City and the Cathedral. Daily at 10.30am. £15, children 12 and under free.">
+<meta property="og:title" content="Glasgow Gander Walking Tours">
+<meta property="og:description" content="Three hours, 1.5 miles and the whole story of Glasgow. Daily at 10.30am from Royal Exchange Square. £15, kids go free.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.glasgowgander.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  "name": "Glasgow City Centre Walking Tour",
+  "description": "A 3-hour guided walk from Royal Exchange Square to Glasgow Cathedral with Johnny, the self-styled Glasgow Gander.",
+  "touristType": "Sightseeing",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Glasgow Gander Walking Tours",
+    "telephone": "+447516554828",
+    "email": "info@glasgowgander.com",
+    "url": "https://www.glasgowgander.com/",
+    "address": {"@type": "PostalAddress", "streetAddress": "Royal Exchange Square", "addressLocality": "Glasgow", "postalCode": "G1 3AB", "addressCountry": "GB"}
+  },
+  "offers": {"@type": "Offer", "price": "15.00", "priceCurrency": "GBP", "url": "https://www.glasgowgander.com/book-online"}
+}
+</script>
+<style>
+/* Layout: the page walks the tour route, start to finish. Black-and-white like the Gander's jacket, with Wellington's traffic-cone orange as the one accent. */
+:root {
+  --paper: #f3f4f1;
+  --card: #ffffff;
+  --ink: #15161a;
+  --muted: #5a5d64;
+  --line: #d6d8d2;
+  --cone: #e8590c;
+  --cone-ink: #ffffff;
+  --band: #15161a;
+  --band-ink: #f3f4f1;
+  --band-muted: #a9acb2;
+  --font-display: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --step--1: 0.875rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.3rem;
+  --step-2: 1.75rem;
+  --step-3: clamp(2rem, 4vw, 2.75rem);
+  --step-4: clamp(2.75rem, 8vw, 5.5rem);
+  --wrap: 72rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #111215; --card: #1a1c20; --ink: #eeefeb; --muted: #a2a5ab; --line: #2b2d32;
+    --cone: #ff7a2e; --cone-ink: #15161a; --band: #000000; --band-ink: #eeefeb; --band-muted: #9a9da3;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #111215; --card: #1a1c20; --ink: #eeefeb; --muted: #a2a5ab; --line: #2b2d32;
+  --cone: #ff7a2e; --cone-ink: #15161a; --band: #000000; --band-ink: #eeefeb; --band-muted: #9a9da3;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.6;
+}
+.wrap {
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.05; margin: 0; text-wrap: balance; }
+h2 { font-size: var(--step-3); font-weight: 800; font-stretch: 80%; text-transform: uppercase; letter-spacing: 0.005em; }
+h3 { font-size: var(--step-1); font-weight: 700; font-stretch: 90%; }
+p { margin: 0; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--cone); outline-offset: 3px; border-radius: 4px; }
+.eyebrow { font-family: var(--font-mono); font-size: var(--step--1); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.lede { font-size: var(--step-1); line-height: 1.5; max-width: 34ch; }
+.measure { max-width: 62ch; }
+.mono { font-family: var(--font-mono); }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 0.6em;
+  font-family: var(--font-display); font-weight: 800; font-stretch: 90%;
+  text-transform: uppercase; letter-spacing: 0.03em; font-size: 1rem;
+  padding: 0.9em 1.4em; border-radius: 999px; text-decoration: none;
+  background: var(--cone); color: var(--cone-ink); border: 2px solid var(--cone);
+  transition: transform 0.15s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }
+
+/* Header */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--paper); border-bottom: 1px solid var(--line); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 0.75rem; }
+.wordmark { font-family: var(--font-display); font-weight: 900; font-stretch: 70%; font-size: 1.35rem; letter-spacing: 0.02em; text-transform: uppercase; text-decoration: none; line-height: 1; }
+.wordmark span { color: var(--cone); }
+.nav { display: flex; align-items: center; gap: 1.5rem; font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; }
+.nav a { text-decoration: none; }
+.nav a:not(.btn):hover { text-decoration: underline; text-underline-offset: 4px; }
+.nav .btn { padding: 0.6em 1.1em; font-size: 0.9rem; }
+@media (max-width: 760px) { .nav a:not(.btn) { display: none; } }
+
+/* Hero */
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; padding-block: clamp(2.5rem, 6vw, 5rem); }
+.hero h1 { font-size: var(--step-4); font-weight: 900; font-stretch: 68%; text-transform: uppercase; line-height: 0.92; letter-spacing: -0.005em; }
+.hero h1 em { font-style: normal; color: var(--cone); }
+.hero-copy { display: grid; gap: 1.5rem; min-width: 0; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+.rating { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; }
+.stars { color: var(--cone); letter-spacing: 0.1em; font-size: 1.1rem; }
+.route-card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 1rem; min-width: 0; }
+.route-card svg { display: block; width: 100%; height: auto; }
+.route-card figcaption { font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); padding: 0.25rem 0.5rem 0; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+@media (max-width: 820px) { .hero .wrap { grid-template-columns: 1fr; } }
+
+/* Facts band */
+.facts { background: var(--band); color: var(--band-ink); }
+.facts ul { list-style: none; margin-block: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1rem; padding-block: 1.75rem; }
+.facts li { display: grid; gap: 0.2rem; }
+.facts b { font-family: var(--font-display); font-weight: 800; font-stretch: 80%; font-size: var(--step-2); line-height: 1; font-variant-numeric: tabular-nums; }
+.facts span { font-family: var(--font-mono); font-size: 0.78rem; color: var(--band-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+@media (max-width: 900px) { .facts ul { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .facts ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+section.block { padding-block: clamp(3rem, 7vw, 5.5rem); }
+.block-head { display: grid; gap: 0.75rem; margin-bottom: 2.25rem; }
+
+/* Route stops */
+.stops { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 3rem; counter-reset: stop; }
+.stops li { display: grid; grid-template-columns: 2.75rem minmax(0, 1fr); gap: 1rem; padding-block: 1.1rem; border-top: 1px solid var(--line); counter-increment: stop; }
+.stops li::before { content: counter(stop); font-family: var(--font-display); font-weight: 800; font-stretch: 75%; font-size: 1.1rem; width: 2.25rem; height: 2.25rem; border-radius: 50%; border: 2px solid var(--ink); display: grid; place-items: center; }
+.stops li.start::before, .stops li.finish::before { background: var(--cone); border-color: var(--cone); color: var(--cone-ink); }
+.stops h3 { margin-bottom: 0.25rem; }
+.stops p { color: var(--muted); font-size: 0.98rem; }
+.route-note { margin-top: 1.5rem; font-family: var(--font-mono); font-size: 0.85rem; color: var(--muted); }
+@media (max-width: 720px) { .stops { grid-template-columns: 1fr; } }
+
+/* Reviews */
+.reviews { background: var(--card); border-block: 1px solid var(--line); }
+.score { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 1.25rem; }
+.score b { font-family: var(--font-display); font-weight: 900; font-stretch: 70%; font-size: clamp(4rem, 12vw, 7rem); line-height: 0.9; }
+.quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.quotes blockquote { margin: 0; display: grid; gap: 0.75rem; align-content: start; padding-top: 1rem; border-top: 3px solid var(--ink); }
+.quotes p { font-size: 1.1rem; line-height: 1.5; }
+.quotes cite { font-style: normal; font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); }
+.placeholder { color: var(--muted); font-style: italic; }
+.review-links { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+@media (max-width: 820px) { .quotes { grid-template-columns: 1fr; } }
+
+/* Johnny */
+.johnny .wrap { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(1.5rem, 5vw, 4rem); align-items: center; }
+.photo-slot { aspect-ratio: 4 / 5; max-width: 100%; border-radius: 20px; background: repeating-linear-gradient(135deg, var(--card) 0 14px, var(--paper) 14px 28px); border: 2px dashed var(--line); display: grid; place-items: center; text-align: center; padding: 1.5rem; font-family: var(--font-mono); font-size: 0.85rem; color: var(--muted); }
+.johnny .copy { display: grid; gap: 1.25rem; min-width: 0; }
+.pull { font-family: var(--font-display); font-weight: 700; font-stretch: 85%; font-size: var(--step-2); line-height: 1.2; text-wrap: balance; }
+.pull::before { content: "\201C"; color: var(--cone); }
+.pull::after { content: "\201D"; color: var(--cone); }
+@media (max-width: 820px) { .johnny .wrap { grid-template-columns: 1fr; } .photo-slot { aspect-ratio: 3 / 2; } }
+
+/* Private tours */
+.packages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.package { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 1.5rem; display: grid; gap: 0.75rem; align-content: start; }
+.package .for { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.package p { font-size: 0.98rem; }
+@media (max-width: 820px) { .packages { grid-template-columns: 1fr; } }
+
+/* Practical info */
+.info-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2.5rem; }
+.meet { background: var(--band); color: var(--band-ink); border-radius: 20px; padding: 1.75rem; display: grid; gap: 1rem; align-content: start; }
+.meet .eyebrow { color: var(--band-muted); }
+.meet h3 { font-size: var(--step-2); font-stretch: 80%; text-transform: uppercase; font-weight: 800; }
+.meet .warn { font-family: var(--font-display); font-weight: 700; color: var(--cone); }
+.meet dl { margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.5rem 1rem; font-size: 0.98rem; }
+.meet dt { font-family: var(--font-mono); font-size: 0.8rem; color: var(--band-muted); text-transform: uppercase; letter-spacing: 0.06em; padding-top: 0.2rem; }
+.meet dd { margin: 0; }
+.faq { display: grid; }
+.faq details { border-top: 1px solid var(--line); }
+.faq details:last-child { border-bottom: 1px solid var(--line); }
+.faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 1rem; padding-block: 1rem; font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--cone); font-weight: 800; font-size: 1.3rem; line-height: 1; }
+.faq details[open] summary::after { content: "\2212"; }
+.faq details p { padding-bottom: 1rem; color: var(--muted); }
+@media (max-width: 820px) { .info-grid { grid-template-columns: 1fr; } }
+
+/* Final CTA */
+.final { background: var(--cone); color: var(--cone-ink); }
+.final .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem; padding-block: clamp(2.5rem, 6vw, 4rem); }
+.final h2 { font-size: var(--step-4); font-stretch: 65%; font-weight: 900; line-height: 0.92; }
+.final .btn { background: var(--band); color: var(--band-ink); border-color: var(--band); }
+.final .contact { font-family: var(--font-mono); font-size: 0.9rem; display: grid; gap: 0.25rem; }
+
+footer { padding-block: 2rem 3rem; font-size: 0.9rem; color: var(--muted); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+footer .motto { font-family: var(--font-display); font-weight: 800; font-stretch: 75%; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink); }
+footer nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="#top">Glasgow <span>Gander</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#route">The tour</a>
+      <a href="#private">Private tours</a>
+      <a href="#info">Info &amp; FAQ</a>
+      <a class="btn" href="https://www.glasgowgander.com/book-online">Book now</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">Glasgow city centre walking tour · daily 10.30am</p>
+        <h1>Glasgow, <em>told</em> properly.</h1>
+        <p class="lede">Three hours, 1.5 miles and the whole story of Scotland's powerhouse, from Royal Exchange Square to the Cathedral, with Johnny, the self-styled Glasgow Gander.</p>
+        <div class="cta-row">
+          <a class="btn" href="https://www.glasgowgander.com/book-online">Book your place · £15</a>
+          <a class="btn ghost" href="#route">See the route</a>
+        </div>
+        <!-- TODO: replace "hundreds of" with the real current count, e.g. "Rated 5.0 by 650+ guests" -->
+        <p class="rating"><span class="stars" aria-hidden="true">★★★★★</span> Rated 5 stars by hundreds of guests on TripAdvisor &amp; Google</p>
+      </div>
+
+      <figure class="route-card" style="margin:0">
+        <svg viewBox="0 0 520 420" role="img" aria-label="Route map: from Royal Exchange Square past George Square, the Merchant City and Glasgow Cross, then uphill to Glasgow Cathedral">
+          <defs>
+            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M40 0H0V40" fill="none" stroke="var(--line)" stroke-width="1"/>
+            </pattern>
+          </defs>
+          <rect x="0" y="0" width="520" height="420" fill="url(#grid)" rx="12"/>
+          <polyline points="150,245 78,205 120,145 205,128 255,190 258,255 305,295 362,340 392,278 404,226 432,150 446,82" fill="none" stroke="var(--ink)" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+          <polyline points="392,278 404,226 432,150 446,82" fill="none" stroke="var(--cone)" stroke-width="7" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="2 12"/>
+          <g font-family="IBM Plex Mono, ui-monospace, monospace" font-size="13" fill="var(--ink)">
+            <circle cx="150" cy="245" r="11" fill="var(--cone)"/>
+            <text x="150" y="282" text-anchor="middle" font-weight="500">Royal Exchange Sq</text>
+            <text x="150" y="298" text-anchor="middle" fill="var(--muted)" font-size="11.5">START · by GoMA</text>
+            <circle cx="78" cy="205" r="7" fill="var(--card)" stroke="var(--ink)" stroke-width="3"/>
+            <text x="74" y="232" text-anchor="middle">Buchanan St</text>
+            <circle cx="205" cy="128" r="7" fill="var(--card)" stroke="var(--ink)" stroke-width="3"/>
+            <text x="205" y="108" text-anchor="middle">George Square</text>
+            <circle cx="258" cy="225" r="7" fill="var(--card)" stroke="var(--ink)" stroke-width="3"/>
+            <text x="276" y="229">Trades Hall</text>
+            <circle cx="305" cy="295" r="7" fill="var(--card)" stroke="var(--ink)" stroke-width="3"/>
+            <text x="248" y="320" text-anchor="end">Merchant City</text>
+            <circle cx="362" cy="340" r="7" fill="var(--card)" stroke="var(--ink)" stroke-width="3"/>
+            <text x="362" y="370" text-anchor="middle">Glasgow Cross</text>
+            <circle cx="404" cy="226" r="7" fill="var(--card)" stroke="var(--ink)" stroke-width="3"/>
+            <text x="420" y="230">High St</text>
+            <text x="452" y="188" fill="var(--cone)" font-size="11.5" font-weight="500">uphill ↑</text>
+            <circle cx="446" cy="82" r="11" fill="var(--cone)"/>
+            <text x="446" y="56" text-anchor="middle" font-weight="500">Glasgow Cathedral</text>
+            <text x="446" y="40" text-anchor="middle" fill="var(--muted)" font-size="11.5">FINISH</text>
+          </g>
+          <!-- Wellington's cone at the start -->
+          <path d="M150 196 l-9 22 h18 z" fill="var(--cone)"/>
+          <rect x="138" y="217" width="24" height="4" rx="1" fill="var(--cone)"/>
+          <rect x="145.5" y="203" width="9" height="3" fill="var(--card)"/>
+          <rect x="143.5" y="209" width="13" height="3" fill="var(--card)"/>
+        </svg>
+        <figcaption><span>1.5 miles · 2.4 km · about 3 hours</span><span>Not to scale</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="facts" aria-label="Tour facts">
+    <ul class="wrap">
+      <li><b>£15</b><span>Per adult</span></li>
+      <li><b>Free</b><span>Kids 12 &amp; under</span></li>
+      <li><b>3 hrs</b><span>Plenty of stories</span></li>
+      <li><b>2.4 km</b><span>1.5 miles</span></li>
+      <li><b>15 max</b><span>Small groups</span></li>
+      <li><b>10.30</b><span>Daily start</span></li>
+    </ul>
+  </section>
+
+  <section class="block" id="route">
+    <div class="wrap">
+      <div class="block-head">
+        <p class="eyebrow">The route</p>
+        <h2>Eight stops, one city's story</h2>
+        <p class="measure">Victorian grandeur, tobacco-lord mansions and the medieval heart of Glasgow, in the order you'll walk them.</p>
+      </div>
+      <ol class="stops">
+        <li class="start"><div><h3>Royal Exchange Square</h3><p>Meet beside the Duke of Wellington and his famous traffic cone, outside the Gallery of Modern Art, once a tobacco lord's mansion.</p></div></li>
+        <li><div><h3>Buchanan Street</h3><p>Glasgow's grand shopping street and a crash course in reading Victorian façades.</p></div></li>
+        <li><div><h3>George Square &amp; the City Chambers</h3><p>The civic heart of the city, and the marble-clad chambers Queen Victoria opened in 1888.</p></div></li>
+        <li><div><h3>Trades Hall</h3><p>Robert Adam's only surviving building in Glasgow, home of the city's craft guilds since 1794.</p></div></li>
+        <li><div><h3>The Merchant City</h3><p>The streets the tobacco lords built, and the fortunes and darker history behind them.</p></div></li>
+        <li><div><h3>Glasgow Cross</h3><p>The old centre of town, watched over by the 17th-century Tolbooth Steeple.</p></div></li>
+        <li><div><h3>High Street</h3><p>Glasgow's oldest street and the original home of its university. This is the uphill half-mile.</p></div></li>
+        <li class="finish"><div><h3>Glasgow Cathedral</h3><p>The medieval cathedral that came through the Reformation intact, built over the tomb of St Mungo.</p></div></li>
+      </ol>
+      <p class="route-note">Wheelchair accessible; the last half-mile from Glasgow Cross is uphill. No planned toilet break, though toilets are on the route.</p>
+    </div>
+  </section>
+
+  <section class="block reviews" aria-labelledby="reviews-h">
+    <div class="wrap">
+      <div class="score">
+        <b>5.0</b>
+        <div>
+          <p class="stars" aria-hidden="true">★★★★★</p>
+          <h2 id="reviews-h">What guests say</h2>
+        </div>
+      </div>
+      <!-- TODO: paste three real reviews (short, ideally naming Johnny) with first name and country -->
+      <div class="quotes">
+        <blockquote><p class="placeholder">Guest review 1: paste a favourite TripAdvisor or Google review here.</p><cite>Name, country · TripAdvisor</cite></blockquote>
+        <blockquote><p class="placeholder">Guest review 2: one that mentions Johnny's storytelling works best.</p><cite>Name, country · Google</cite></blockquote>
+        <blockquote><p class="placeholder">Guest review 3: one that mentions the rain, and that it didn't matter.</p><cite>Name, country · TripAdvisor</cite></blockquote>
+      </div>
+      <div class="review-links">
+        <a class="btn ghost" href="https://www.tripadvisor.co.uk/">Read reviews on TripAdvisor</a>
+        <a class="btn ghost" href="https://www.google.com/maps/search/Glasgow+Gander+Walking+Tours">Read reviews on Google</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block johnny" aria-labelledby="johnny-h">
+    <div class="wrap">
+      <div class="photo-slot">Photo: Johnny in the black-and-white Gander jacket at Royal Exchange Square</div>
+      <div class="copy">
+        <p class="eyebrow">Your guide</p>
+        <h2 id="johnny-h">Meet the Gander</h2>
+        <p class="pull">Glasgow Gander Walking Tours operates as a one-man band, and always will.</p>
+        <p class="measure">Every tour is led by Johnny himself. He'll answer your questions about Glasgow before, during and after the walk, and his list of recommendations for food, drink, music and museums is as long as your arm. Ask him.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="private" aria-labelledby="private-h">
+    <div class="wrap">
+      <div class="block-head">
+        <p class="eyebrow">Private &amp; group tours</p>
+        <h2 id="private-h">Your group, your pace</h2>
+        <p class="measure">Any date and start time, with the route and the stories shaped around your group.</p>
+      </div>
+      <!-- Prices are deliberately "on request" until Johnny confirms the new packages. -->
+      <div class="packages">
+        <article class="package"><p class="for">Families &amp; friends</p><h3>Private Gander</h3><p>The full tour for just your party, at a time that suits you. Ideal for a special visit or a family with lots of questions.</p></article>
+        <article class="package"><p class="for">Companies &amp; conferences</p><h3>Team walk</h3><p>A ready-made morning or afternoon for delegates and teams of up to 20. Invoiced, with an optional finish at a good pub.</p></article>
+        <article class="package"><p class="for">Schools &amp; universities</p><h3>Group welcome walk</h3><p>A first proper look at Glasgow for new students and visiting groups, on any weekday.</p></article>
+      </div>
+      <div class="cta-row" style="margin-top:1.75rem">
+        <a class="btn" href="https://www.glasgowgander.com/book-online">Ask for a quote</a>
+        <span class="mono">or call 07516 554828</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="info" aria-labelledby="info-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="block-head">
+        <p class="eyebrow">Useful info</p>
+        <h2 id="info-h">Before you go</h2>
+      </div>
+      <div class="info-grid">
+        <div class="meet">
+          <p class="eyebrow">Where we meet</p>
+          <h3>Outside Costa, Royal Exchange Square</h3>
+          <p class="warn">Not George Square!</p>
+          <dl>
+            <dt>Address</dt><dd>Royal Exchange Square, Glasgow G1 3AB, next to the Gallery of Modern Art and the statue with the cone on its head</dd>
+            <dt>Look for</dt><dd>The man in the black-and-white Glasgow Gander jacket</dd>
+            <dt>Finish</dt><dd>Glasgow Cathedral, about 15 minutes' walk from the start</dd>
+            <dt>Starts</dt><dd>10.30am; see live dates when you book</dd>
+          </dl>
+          <p><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Royal+Exchange+Square+Glasgow+G1+3AB">Open in Maps</a></p>
+        </div>
+        <div class="faq">
+          <details open><summary>Do I need to book?</summary><p>Yes. Book online by card or Apple Pay, right up to the start time. Cash can't be taken on the street.</p></details>
+          <details><summary>What if it rains?</summary><p>The tour runs rain or shine, with sheltered stops on wet days. Check the forecast and wrap up. Tours are cancelled only in truly horrendous weather.</p></details>
+          <details><summary>Can I get a refund?</summary><p>Yes, with 24 hours' notice (48 hours for groups of 6 or more), as a refund or a move to another date.</p></details>
+          <details><summary>Is it suitable for children?</summary><p>Everyone is welcome and children 12 and under go free. The content suits ages 10 and up best. Bookings must be made by an adult.</p></details>
+          <details><summary>Is it accessible?</summary><p>Generally, yes: it's wheelchair accessible, with an uphill last half-mile. Get in touch beforehand and Johnny will check it suits you.</p></details>
+          <details><summary>What if I'm running late?</summary><p>Call or WhatsApp 07516 554828 and Johnny will do his best to help you catch up with the group.</p></details>
+          <details><summary>What if I can't afford it?</summary><p>Get in touch and we'll work something out.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" aria-label="Book">
+    <div class="wrap">
+      <h2>See you at<br>the cone.</h2>
+      <div style="display:grid;gap:1rem">
+        <a class="btn" href="https://www.glasgowgander.com/book-online">Book your place · £15</a>
+        <div class="contact"><span>07516 554828</span><span>info@glasgowgander.com</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="motto">Let Glasgow Flourish</span>
+    <nav aria-label="Footer">
+      <a href="https://www.glasgowgander.com/useful-info-faq">FAQ</a>
+      <a href="https://www.glasgowgander.com/terms-and-conditions">Terms</a>
+      <a href="https://www.glasgowgander.com/privacy">Privacy</a>
+    </nav>
+    <span>Photo credit: Gordon 'Richie' Richardson</span>
+  </div>
+</footer>
+
+</body>
+</html>
