@@ -64,6 +64,17 @@ body { margin: 0; background: #777; display: grid; gap: 40px; padding: 40px; jus
 .p6 h1 span { display: block; }
 .p6 h1 .w { color: var(--white); }
 .p6 .sub { font-family: var(--serif); font-size: 42px; line-height: 1.3; max-width: 18em; }
+
+.logo { width: 120px; height: 120px; border-radius: 50%; background: #fff; display: block; }
+.foot .mark { white-space: nowrap; }
+.foot .brand { display: flex; align-items: center; gap: 22px; }
+/* 7 meet johnny */
+.p7 { background: var(--ink); color: var(--paper); padding: 0; display: grid; grid-template-rows: 590px 1fr; }
+.p7 .photo { width: 100%; height: 590px; object-fit: cover; object-position: center 30%; display: block; }
+.p7 .body { padding: 48px 84px 60px; display: flex; flex-direction: column; justify-content: space-between; }
+.p7 h1 { font-size: 118px; }
+.p7 .sub { font-family: var(--serif); font-size: 34px; line-height: 1.3; color: var(--paper); margin-top: 18px; }
+.p7 .badge { position: absolute; top: 48px; right: 48px; width: 170px; height: 170px; }
 </style>
 </head>
 <body>
@@ -74,7 +85,7 @@ body { margin: 0; background: #777; display: grid; gap: 40px; padding: 40px; jus
   <h1>Glasgow,<br><span class="o">told</span><br>properly.</h1>
   <div style="display:grid;gap:56px">
     <div class="facts"><span>Daily 10.30am</span><span>3 hours</span><span>£15</span><span>Kids go free</span></div>
-    <div class="foot"><span class="mark">Glasgow <span class="o">Gander</span></span><span>glasgowgander.com</span></div>
+    <div class="foot"><span class="brand"><img class="logo" src="../assets/logo.png" alt=""><span class="mark">Glasgow <span class="o">Gander</span></span></span><span>glasgowgander.com</span></div>
   </div>
 </article>
 
@@ -91,7 +102,7 @@ body { margin: 0; background: #777; display: grid; gap: 40px; padding: 40px; jus
     <h1>He's worn it since the 1980<span style="text-transform:none">s</span>.</h1>
     <p class="sub">Glasgow's most famous hat sits on the Duke of Wellington, right where every tour begins. Ask Johnny why.</p>
   </div>
-  <div class="foot"><span class="mark">Glasgow Gander</span><span>glasgowgander.com</span></div>
+  <div class="foot"><span class="brand"><img class="logo" src="../assets/logo.png" alt=""><span class="mark">Glasgow Gander</span></span><span>glasgowgander.com</span></div>
 </article>
 
 <!-- 3. Review (template: replace the quote and name) -->
@@ -101,7 +112,7 @@ body { margin: 0; background: #777; display: grid; gap: 40px; padding: 40px; jus
     <blockquote>Paste a short guest review here. Two lines that mention Johnny work best.</blockquote>
     <cite>Name, Country · TripAdvisor</cite>
   </div>
-  <div class="foot"><span class="mark">Glasgow <span class="o">Gander</span></span><span>Rated 5.0 · glasgowgander.com</span></div>
+  <div class="foot"><span class="brand"><img class="logo" src="../assets/logo.png" alt=""><span class="mark">Glasgow <span class="o">Gander</span></span></span><span>glasgowgander.com</span></div>
 </article>
 
 <!-- 4. Weather -->
@@ -111,7 +122,7 @@ body { margin: 0; background: #777; display: grid; gap: 40px; padding: 40px; jus
     <h1>Rain?<br>We have<br>stories<br>for that.</h1>
     <p class="sub">Rain or shine, daily at 10.30am, with sheltered stops on wet days. Wrap up and see Glasgow in proper Glasgow weather.</p>
   </div>
-  <div class="foot"><span class="mark">Glasgow <span class="o">Gander</span></span><span>glasgowgander.com</span></div>
+  <div class="foot"><span class="brand"><img class="logo" src="../assets/logo.png" alt=""><span class="mark">Glasgow <span class="o">Gander</span></span></span><span>glasgowgander.com</span></div>
 </article>
 
 <!-- 5. Gift voucher -->
@@ -135,7 +146,20 @@ body { margin: 0; background: #777; display: grid; gap: 40px; padding: 40px; jus
     <h1><span>Your group.</span><span>Your pace.</span><span class="w">Your Glasgow.</span></h1>
     <p class="sub">Private tours for families, friends and teams, on any date. Ask Johnny for a quote.</p>
   </div>
-  <div class="foot"><span class="mark">Glasgow Gander</span><span>07516 554828</span></div>
+  <div class="foot"><span class="brand"><img class="logo" src="../assets/logo.png" alt=""><span class="mark">Glasgow Gander</span></span><span>07516 554828</span></div>
+</article>
+
+<!-- 7. Meet Johnny -->
+<article class="post p7" id="post-7">
+  <img class="photo" src="../assets/johnny.jpg" alt="">
+  <img class="logo badge" src="../assets/logo.png" alt="">
+  <div class="body">
+    <div>
+      <h1>Meet the <span class="o">Gander.</span></h1>
+      <p class="sub">Every tour is led by Johnny himself: one man, one city, a thousand stories.</p>
+    </div>
+    <div class="foot"><span>Daily 10.30am</span><span>glasgowgander.com</span></div>
+  </div>
 </article>
 
 </body>
