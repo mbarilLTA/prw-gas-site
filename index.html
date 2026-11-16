@@ -160,13 +160,15 @@ section.block { padding-block: clamp(3rem, 7vw, 5.5rem); }
 .reviews { background: var(--card); border-block: 1px solid var(--line); }
 .score { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 1.25rem; }
 .score b { font-family: var(--font-display); font-weight: 900; font-stretch: 70%; font-size: clamp(4rem, 12vw, 7rem); line-height: 0.9; }
-.quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 1.5rem; margin-top: 2rem; }
 .quotes blockquote { margin: 0; display: grid; gap: 0.75rem; align-content: start; padding-top: 1rem; border-top: 3px solid var(--ink); }
-.quotes p { font-size: 1.1rem; line-height: 1.5; }
+.quotes p { font-size: 1.02rem; line-height: 1.5; color: var(--muted); }
+.quotes .headline { font-family: var(--font-display); font-weight: 800; font-stretch: 85%; font-size: var(--step-1); line-height: 1.15; color: var(--ink); text-wrap: balance; }
 .quotes cite { font-style: normal; font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); }
 .placeholder { color: var(--muted); font-style: italic; }
 .review-links { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
-@media (max-width: 820px) { .quotes { grid-template-columns: 1fr; } }
+@media (max-width: 960px) { .quotes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .quotes { grid-template-columns: 1fr; } }
 
 /* Johnny */
 .johnny .wrap { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(1.5rem, 5vw, 4rem); align-items: center; }
@@ -340,14 +342,17 @@ footer nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
           <h2 id="reviews-h">What guests say</h2>
         </div>
       </div>
-      <!-- TODO: paste three real reviews (short, ideally naming Johnny) with first name and country -->
+      <!-- Verbatim TripAdvisor reviews, Sep–Nov 2026. Spellings kept as the guests wrote them. -->
       <div class="quotes">
-        <blockquote><p class="placeholder">Guest review 1: paste a favourite TripAdvisor or Google review here.</p><cite>Name, country · TripAdvisor</cite></blockquote>
-        <blockquote><p class="placeholder">Guest review 2: one that mentions Johnny's storytelling works best.</p><cite>Name, country · Google</cite></blockquote>
-        <blockquote><p class="placeholder">Guest review 3: one that mentions the rain, and that it didn't matter.</p><cite>Name, country · TripAdvisor</cite></blockquote>
+        <blockquote><p class="headline">Best walking tour we've experienced.</p><p>Jonny was brilliant, a natural chatty self effacing style, his obvious local knowledge and passion shone through.</p><cite>David T · TripAdvisor, Nov 2026</cite></blockquote>
+        <blockquote><p class="headline">Three hours flew right by!</p><p>Johnny was a fantastic tour guide with a wealth of knowledge and tips about the beautifully packed city!</p><cite>Dan H, San Francisco · TripAdvisor, Nov 2026</cite></blockquote>
+        <blockquote><p class="headline">I'd barely scraped the surface!</p><p>I thought I'd discovered quite a lot on my own over the last few days, but this tour made me realise I'd barely scraped the surface!</p><cite>Irene B · TripAdvisor, Oct 2026</cite></blockquote>
+        <blockquote><p class="headline">Outstanding. A must do!</p><p>Such value for money, and one of the most engaging tour guides we have had on any city tour.</p><cite>Rosscodad, Northamptonshire · TripAdvisor, Oct 2026</cite></blockquote>
+        <blockquote><p class="headline">If doing a walking tour&hellip; do this one!</p><p>Without his tour we would have missed out on so much interesting information about Glasgow.</p><cite>Matt D, Stanmore · TripAdvisor, Oct 2026</cite></blockquote>
+        <blockquote><p class="headline">We loved the stories and the banter.</p><p>He gave us a ton of advise where to experience best food, music, night life, culture and history. Amazing value for money.</p><cite>Marcin K · TripAdvisor, Oct 2026</cite></blockquote>
       </div>
       <div class="review-links">
-        <a class="btn ghost" href="https://www.tripadvisor.co.uk/">Read reviews on TripAdvisor</a>
+        <a class="btn ghost" href="https://www.tripadvisor.com/Attraction_Review-g186534-d14152744-Reviews-Glasgow_Gander_Walking_Tours-Glasgow_Scotland.html">Read all reviews on TripAdvisor</a>
         <a class="btn ghost" href="https://www.google.com/maps/search/Glasgow+Gander+Walking+Tours">Read reviews on Google</a>
       </div>
     </div>
