@@ -10,7 +10,7 @@
 <meta property="og:description" content="Three hours, 1.5 miles and the whole story of Glasgow. Daily at 10.30am from Royal Exchange Square. £15, kids go free.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.glasgowgander.com/">
-<meta property="og:image" content="assets/city-chambers.jpg">
+<meta property="og:image" content="assets/tour-george-square.jpg">
 <link rel="icon" type="image/png" href="assets/logo-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -175,6 +175,12 @@ section.block { padding-block: clamp(3rem, 7vw, 5.5rem); }
 .johnny-photo { margin: 0; display: grid; gap: 0.5rem; }
 .johnny-photo img { width: 100%; height: auto; max-width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 20px; display: block; }
 .johnny-photo figcaption { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); }
+.photo-strip { padding-top: clamp(2rem, 5vw, 3.5rem); }
+.strip-grid { display: grid; grid-template-columns: minmax(0, 1.67fr) minmax(0, 1.33fr); gap: 1rem; }
+.strip-grid figure { margin: 0; display: grid; gap: 0.5rem; align-content: start; }
+.strip-grid img { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 16px; }
+.strip-grid figcaption { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); }
+@media (max-width: 700px) { .strip-grid { grid-template-columns: 1fr; } }
 .city-band { margin: 0; }
 .city-band img { display: block; width: 100%; height: auto; max-width: 100%; aspect-ratio: 21 / 8; object-fit: cover; object-position: center 40%; }
 .city-band figcaption { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); padding-block: 0.6rem; }
@@ -307,10 +313,12 @@ footer nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
     </ul>
   </section>
 
-  <figure class="city-band">
-    <img src="assets/city-chambers.jpg" alt="Glasgow City Chambers on George Square" width="1800" height="1200" loading="lazy">
-    <figcaption class="wrap">Glasgow City Chambers, George Square: stop 3 on the tour</figcaption>
-  </figure>
+  <section class="photo-strip" aria-label="On tour">
+    <div class="wrap strip-grid">
+      <figure><img src="assets/tour-george-square.jpg" alt="Johnny leading a tour group at the cenotaph in George Square, in front of Glasgow City Chambers" width="1400" height="838" loading="lazy"><figcaption>George Square and the City Chambers, stop 3</figcaption></figure>
+      <figure><img src="assets/tour-indoor-stage.jpg" alt="Johnny telling stories on the stage of an old Glasgow music hall to a seated tour group" width="1400" height="1050" loading="lazy"><figcaption>Stories indoors at one of the stops</figcaption></figure>
+    </div>
+  </section>
 
   <section class="block" id="route">
     <div class="wrap">
@@ -360,8 +368,7 @@ footer nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
 
   <section class="block johnny" aria-labelledby="johnny-h">
     <div class="wrap">
-      <!-- TODO: swap for a photo of Johnny on tour, in the Gander jacket, if one exists -->
-      <figure class="johnny-photo"><img src="assets/johnny.jpg" alt="Johnny, the Glasgow Gander, wearing his Glasgow Gander polo shirt" width="1200" height="1200" loading="lazy"><figcaption>Johnny, the self-styled Glasgow Gander</figcaption></figure>
+      <figure class="johnny-photo"><img src="assets/johnny-police-box.jpg" alt="Johnny, the Glasgow Gander, in his Gander jacket beside a blue Glasgow police box" width="1000" height="1000" loading="lazy"><figcaption>Johnny on tour, by one of Glasgow's old police boxes</figcaption></figure>
       <div class="copy">
         <p class="eyebrow">Your guide</p>
         <h2 id="johnny-h">Meet the Gander</h2>
